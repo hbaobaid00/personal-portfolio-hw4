@@ -1,0 +1,318 @@
+:root {
+  --primary-color: #00c8ff;
+  --accent-color: #0077ff;
+  --highlight-color: #00e0ff;
+  --bg-dark: #0b0c10;
+  --bg-panel: #14181f;
+  --text-color: #e0e0e0;
+  --font-body: "Inter Tight", sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  --max-content-width: 70ch;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Inter+Tight:wght@400;600&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at 30% 30%, #0f2027, #0b0c10 80%);
+  color: var(--text-color);
+  font-family: var(--font-body, sans-serif);
+  margin: 0 auto;
+  min-height: 100dvh;
+}
+
+
+header {
+  background: linear-gradient(90deg, #0090ff, #004cff);
+  padding: 1rem 0;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 200, 255, 0.7);
+  box-shadow: 0 2px 15px rgba(0, 200, 255, 0.4);
+  position: relative;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+circle {
+    fill: var(--highlight-color);
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  position: relative;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--highlight-color);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: var(--highlight-color);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--highlight-color) 60%, white);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr min(var(--max-content-width), 90%) 1fr;
+  padding: 2rem 1rem;
+  min-height: 70vh;
+}
+
+main > * {
+  grid-column: 2;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading, sans-serif);
+  color: var(--highlight-color);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--highlight-color) 60%, white);
+}
+
+h1 {
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+h2 {
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.3rem;
+}
+
+p {
+  line-height: 1.7;
+  font-size: 1rem;
+  max-width: 65ch;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+  color: var(--highlight-color);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--highlight-color) 60%, white);
+}
+
+article, section {
+  background: var(--bg-panel);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.08);
+  animation: fadeIn 0.8s ease both;
+}
+
+.photos {
+  display: flex;
+  justify-content: center;   
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.photos img{
+    width: 10rem;               
+    height: 10rem;
+}
+.robotImage {
+    width: 30dvh;               
+    height: 30dvh;              
+}
+.photos img, .robotImage {         
+  object-fit: cover;          
+  border-radius: 50%;  
+  border: 2px solid var(--highlight-color); 
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.25); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 1rem;
+}
+
+img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.5);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: linear-gradient(145deg, #10141a, #181c24);
+  padding: 1.5rem;
+  text-align: left;
+  margin: 2rem auto;
+  border-radius: 10px;
+  max-width: 500px;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
+}
+
+.FormCenter {
+  text-align: center;
+}
+
+legend{
+    text-align: center;
+}
+
+label {
+  font-weight: 600;
+  color: var(--highlight-color);
+}
+
+input, textarea, button {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #2a2a2a;
+  border-radius: 5px;
+  width: 90%;
+  background: #0f141a;
+  color: var(--text-color);
+  font-family: var(--font-body);
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--primary-color);
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.4);
+}
+
+button {
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px var(--highlight-color);
+}
+
+footer {
+  background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 15px rgba(0, 200, 255, 0.3);
+}
+
+footer p {
+  max-width: min(var(--max-content-width), 90%);
+  margin: 0 auto;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow hover effect for cards/images */
+article:hover, section:hover {
+  box-shadow: 0 0 25px rgba(0, 224, 255, 0.15);
+  transform: translateY(-2px);
+  transition: 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+ 
+  form {
+    width: 95%;
+  }
+  .robotImage {
+    width: 50%;               
+    height: 50%;              
+  }
+  iframe {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr 90% 1fr;
+  }
+}
+
+@media (min-width: 901px) {
+  body {
+    font-size: 1.1rem;
+  }
+}
+
+nav {
+  ul {
+    li {
+      a {
+        &:focus {
+          outline: 2px dashed var(--highlight-color);
+          outline-offset: 4px;
+        }
+      }
+    }
+  }
+}
+
+picture, video, audio {
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 10px;
+}
+
+:focus-visible {
+  outline: 2px dashed var(--highlight-color);
+  outline-offset: 4px;
+}
+
+noscript p {
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 1rem;
+  border-left: 4px solid var(--highlight-color);
+}
+
