@@ -285,6 +285,7 @@ form {
 
 legend{
     text-align: center;
+    color: var(--highlight-color);
 }
 
 label {
