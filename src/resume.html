@@ -15,6 +15,7 @@
 
         customElements.define("my-hello-world", MyHelloWorld);
     </script>
+    <script src="../js/site.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
     <style>
         header, nav, main, section, article, footer {
@@ -52,10 +53,22 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="form-with-js.html">Contact (w/ JS)</a></li>
+                <li><a href="form-no-js.html">Contact (w/o JS)</a></li>
                 <li><a href="resume.html" aria-current="page">Resume</a></li>
             </ul>
         </nav>
+        <select id="theme-select" class="theme-select" hidden>
+            <option value="dark">Dark Mode 🌙</option>
+            <option value="light">Light Mode ☀️</option>
+            <option value="halloween">Halloween 🎃</option>
+            <option value="christmas">Christmas 🎄</option>
+        </select>
+        <noscript>
+            <p class="noscript-note">
+            Theme switching & smooth transitions require JavaScript.
+            </p>
+        </noscript> 
     </header>
     <main>
         <article>
